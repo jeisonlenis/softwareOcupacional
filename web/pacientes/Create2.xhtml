@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:panelGrid columns="2" rendered="#{empresasController.selected != null}">
+                <p:outputLabel value="Nombres:" for="nombres" />
+                <p:inputText id="nombres" value="#{empresasController.pacienteActual.nombres}" title="Nombres" required="true" requiredMessage="The Nombres field is required."/>
+                <p:outputLabel value="Apellidos:" for="apellidos" />
+                <p:inputText id="apellidos" value="#{empresasController.pacienteActual.apellidos}" title="Apellidos" required="true" requiredMessage="The Apellidos field is required."/>
+                <p:outputLabel value="FecNac:" for="fecNac" />
+                <p:calendar showOn="button" id="fecNac" navigator="true" 
+                            value="#{empresasController.pacienteActual.fecNac}"  
+                            pattern="yyyy-MM-dd"  yearRange="c-80:c-16">
+                </p:calendar>
+                <p:outputLabel value="TipoDoc:" for="tipoDoc" />
+                <p:selectOneMenu id="tipoDoc" required="true"
+                                 value="#{empresasController.pacienteActual.tipoDoc}">
+                    <f:selectItem itemLabel="Selecciona un tipo de documento..." />
+                    <f:selectItem itemLabel="Cédula de Ciudadanía" itemValue="CC"/>
+                    <f:selectItem itemLabel="Cédula de Extragería" itemValue="CE"/>
+                    <f:selectItem itemLabel="Pasaporte" itemValue="P"/>
+                </p:selectOneMenu>
+                <p:outputLabel value="NumDoc:" for="numDoc" />
+                <p:inputText id="numDoc" value="#{empresasController.pacienteActual.numDoc}" title="NumDoc" required="true" requiredMessage="The NumDoc field is required."/>
+                <p:outputLabel value="Edad:" for="edad" />
+                <p:inputText id="edad" value="#{empresasController.pacienteActual.edad}" title="Edad" required="true" requiredMessage="The Edad field is required."/>
+                <p:outputLabel value="TelCel:" for="telCel" />
+                <p:inputText id="telCel" value="#{empresasController.pacienteActual.telCel}" title="TelCel" required="true" requiredMessage="The TelCel field is required."/>
+                <p:outputLabel value="Direccion:" for="direccion" />
+                <p:inputText id="direccion" value="#{empresasController.pacienteActual.direccion}" title="Direccion" required="true" requiredMessage="The Direccion field is required."/>
+                <p:outputLabel value="Ciudad:" for="ciudad" />
+                <p:inputText id="ciudad" value="#{empresasController.pacienteActual.ciudad}" title="Ciudad" required="true" requiredMessage="The Ciudad field is required."/>
+                <p:outputLabel value="EstCiv:" for="estCiv" />
+                <p:inputText id="estCiv" value="#{empresasController.pacienteActual.estCiv}" title="EstCiv" required="true" requiredMessage="The EstCiv field is required."/>
+                <p:outputLabel value="NivAca:" for="nivAca" />
+                <p:inputText id="nivAca" value="#{empresasController.pacienteActual.nivAca}" title="NivAca" required="true" requiredMessage="The NivAca field is required."/>
+                <p:outputLabel value="Afp:" for="afp" />
+                <p:inputText id="afp" value="#{empresasController.pacienteActual.afp}" title="Afp" required="true" requiredMessage="The Afp field is required."/>
+                <p:outputLabel value="Eps:" for="eps" />
+                <p:inputText id="eps" value="#{empresasController.pacienteActual.eps}" title="Eps" required="true" requiredMessage="The Eps field is required."/>
+                <p:outputLabel value="Arl:" for="arl" />
+                <p:inputText id="arl" value="#{empresasController.pacienteActual.arl}" title="Arl" required="true" requiredMessage="The Arl field is required."/>
+                <p:outputLabel value="NumHijos:" for="numHijos" />
+                <p:inputText id="numHijos" value="#{empresasController.pacienteActual.numHijos}" title="NumHijos" required="true" requiredMessage="The NumHijos field is required."/>
+                <p:outputLabel value="Genero:" for="genero" />
+                <p:selectOneMenu id="genero" required="true"
+                                 value="#{empresasController.pacienteActual.genero}">
+                    <f:selectItem itemLabel="Selecciona un género..." />
+                    <f:selectItem itemLabel="Masculino" itemValue="M"/>
+                    <f:selectItem itemLabel="Femenino" itemValue="F"/>
+                </p:selectOneMenu>
+            </p:panelGrid>
+
+            <p:commandButton action="#{empresasController.addPaciente()}" value="Guardar Nuevo Paciente"/>
+        </h:form>
+    </h:body>
+</html>

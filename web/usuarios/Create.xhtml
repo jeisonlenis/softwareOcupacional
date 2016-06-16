@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="UsuariosCreateDlg" widgetVar="UsuariosCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateUsuariosTitle}">
+            <h:form id="UsuariosCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{usuariosController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateUsuariosLabel_idUsuario}" for="idUsuario" />
+                        <p:inputText id="idUsuario" value="#{usuariosController.selected.idUsuario}" title="#{bundle.CreateUsuariosTitle_idUsuario}" required="true" requiredMessage="#{bundle.CreateUsuariosRequiredMessage_idUsuario}"/>
+                        <p:outputLabel value="#{bundle.CreateUsuariosLabel_password}" for="password" />
+                        <p:inputText id="password" value="#{usuariosController.selected.password}" title="#{bundle.CreateUsuariosTitle_password}" required="true" requiredMessage="#{bundle.CreateUsuariosRequiredMessage_password}"/>
+                        <p:outputLabel value="#{bundle.CreateUsuariosLabel_nom}" for="nom" />
+                        <p:inputText id="nom" value="#{usuariosController.selected.nom}" title="#{bundle.CreateUsuariosTitle_nom}" required="true" requiredMessage="#{bundle.CreateUsuariosRequiredMessage_nom}"/>
+                        <p:outputLabel value="#{bundle.CreateUsuariosLabel_ape}" for="ape" />
+                        <p:inputText id="ape" value="#{usuariosController.selected.ape}" title="#{bundle.CreateUsuariosTitle_ape}" required="true" requiredMessage="#{bundle.CreateUsuariosRequiredMessage_ape}"/>
+                        <p:outputLabel value="#{bundle.CreateUsuariosLabel_correo}" for="correo" />
+                        <p:inputText id="correo" value="#{usuariosController.selected.correo}" title="#{bundle.CreateUsuariosTitle_correo}" />
+                        <p:outputLabel value="#{bundle.CreateUsuariosLabel_tel}" for="tel" />
+                        <p:inputText id="tel" value="#{usuariosController.selected.tel}" title="#{bundle.CreateUsuariosTitle_tel}" />
+                        <p:outputLabel value="#{bundle.CreateUsuariosLabel_cel}" for="cel" />
+                        <p:inputText id="cel" value="#{usuariosController.selected.cel}" title="#{bundle.CreateUsuariosTitle_cel}" />
+                        <p:outputLabel value="#{bundle.CreateUsuariosLabel_numeroDoc}" for="numeroDoc" />
+                        <p:inputText id="numeroDoc" value="#{usuariosController.selected.numeroDoc}" title="#{bundle.CreateUsuariosTitle_numeroDoc}" required="true" requiredMessage="#{bundle.CreateUsuariosRequiredMessage_numeroDoc}"/>
+                        <p:outputLabel value="#{bundle.CreateUsuariosLabel_estado}" for="estado" />
+                        <p:selectBooleanCheckbox id="estado" value="#{usuariosController.selected.estado}" required="true" requiredMessage="#{bundle.EditUsuariosRequiredMessage_estado}"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{usuariosController.create}" value="#{bundle.Save}" update="display,:UsuariosListForm:datalist,:growl" oncomplete="handleSubmit(args,'UsuariosCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="UsuariosCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

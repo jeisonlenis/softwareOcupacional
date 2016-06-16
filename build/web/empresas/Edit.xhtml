@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="EmpresasEditDlg" widgetVar="EmpresasEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditEmpresasTitle}">
+            <h:form id="EmpresasEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{empresasController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditEmpresasLabel_idClem}" for="idClem" />
+                        <p:inputText id="idClem" value="#{empresasController.selected.idClem}" title="#{bundle.EditEmpresasTitle_idClem}" required="true" requiredMessage="#{bundle.EditEmpresasRequiredMessage_idClem}"/>
+                        <p:outputLabel value="#{bundle.EditEmpresasLabel_nomClem}" for="nomClem" />
+                        <p:inputText id="nomClem" value="#{empresasController.selected.nomClem}" title="#{bundle.EditEmpresasTitle_nomClem}" required="true" requiredMessage="#{bundle.EditEmpresasRequiredMessage_nomClem}"/>
+                        <p:outputLabel value="#{bundle.EditEmpresasLabel_fecCreClem}" for="fecCreClem" />
+                        <p:calendar id="fecCreClem" pattern="MM/dd/yyyy" value="#{empresasController.selected.fecCreClem}" title="#{bundle.EditEmpresasTitle_fecCreClem}" required="true" requiredMessage="#{bundle.EditEmpresasRequiredMessage_fecCreClem}" showOn="button"/>
+                        <p:outputLabel value="#{bundle.EditEmpresasLabel_nitClem}" for="nitClem" />
+                        <p:inputText id="nitClem" value="#{empresasController.selected.nitClem}" title="#{bundle.EditEmpresasTitle_nitClem}" required="true" requiredMessage="#{bundle.EditEmpresasRequiredMessage_nitClem}"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{empresasController.update}" value="#{bundle.Save}" update="display,:EmpresasListForm:datalist,:growl" oncomplete="handleSubmit(args, 'EmpresasEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="EmpresasEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

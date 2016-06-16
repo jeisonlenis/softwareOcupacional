@@ -1,0 +1,402 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+
+        <h:form>
+            <!--
+            
+            <p:growl id="growl" sticky="true" showDetail="true"/>
+
+            <p:wizard flowListener="# {userWizard.onFlowProcess}">
+                <p:tab id="personal" title="Personal">
+                    <p:panel header="Personal Details">
+                        <p:messages />
+                        <h:panelGrid columns="2" columnClasses="label, value">
+                            <h:outputText value="Firstname: *" />
+                            <p:inputText value="# {userWizard.user.firstname}" required="true" label="Firstname"/>
+
+                            <h:outputText value="Lastname: *" />
+                            <p:inputText value="# {userWizard.user.lastname}" required="true" label="Lastname"/>
+
+                            <h:outputText value="Age: " />
+                            <p:inputText value="# {userWizard.user.age}" />
+
+                            <h:outputText value="Skip to last: " />
+                            <h:selectBooleanCheckbox value="# {userWizard.skip}" />
+                        </h:panelGrid>
+                    </p:panel>
+                </p:tab>
+
+                <p:tab id="address" title="Address">
+                    <p:panel header="Address Details">
+                        <p:messages />
+                        <h:panelGrid columns="2" columnClasses="label, value">
+                            <h:outputText value="Street: " />
+                            <p:inputText value="# {userWizard.user.street}" />
+
+                            <h:outputText value="Postal Code: " />
+                            <p:inputText value="# {userWizard.user.postalCode}" />
+
+                            <h:outputText value="City: " />
+                            <p:inputText value="# {userWizard.user.city}" />
+
+                            <h:outputText value="Skip to last: " />
+                            <h:selectBooleanCheckbox value="# {userWizard.skip}" />
+                        </h:panelGrid>
+                    </p:panel>
+                </p:tab>
+
+                <p:tab id="contact" title="Contact">
+                    <p:panel header="Contact Information">
+                        <p:messages />
+                        <h:panelGrid columns="2" columnClasses="label, value">
+                            <h:outputText value="Email: *" />
+                            <p:inputText value="# {userWizard.user.email}" required="true" label="Email"/>
+
+                            <h:outputText value="Phone: " />
+                            <p:inputText value="# {userWizard.user.phone}"/>
+
+                            <h:outputText value="Additional Info: " />
+                            <p:inputText value="# {userWizard.user.info}"/>
+                        </h:panelGrid>
+                    </p:panel>
+                </p:tab>
+
+                <p:tab id="confirm" title="Confirmation">
+                    <p:panel header="Confirmation">
+                        <h:panelGrid id="confirmation" columns="3" columnClasses="grid,grid,grid">
+                            <h:panelGrid columns="2" columnClasses="label, value">
+                                <h:outputText value="Firstname: " />
+                                <h:outputText value="# {userWizard.user.firstname}" styleClass="outputLabel"/>
+
+                                <h:outputText value="Lastname: " />
+                                <h:outputText value="# {userWizard.user.lastname}" styleClass="outputLabel"/>
+
+                                <h:outputText value="Age: " />
+                                <h:outputText value="#{userWizard.user.age}" styleClass="outputLabel"/>
+                            </h:panelGrid>
+
+                            <h:panelGrid columns="2" columnClasses="label, value">
+                                <h:outputText value="Street: " />
+                                <h:outputText value="# {userWizard.user.street}" styleClass="outputLabel"/>
+
+                                <h:outputText value="Postal: " />
+                                <h:outputText value="# {userWizard.user.postalCode}" styleClass="outputLabel"/>
+
+                                <h:outputText value="City: " />
+                                <h:outputText value="# {userWizard.user.city}" styleClass="outputLabel"/>
+                            </h:panelGrid>
+
+                            <h:panelGrid columns="2" columnClasses="label, value">
+                                <h:outputText value="Email: " />
+                                <h:outputText value="# {userWizard.user.email}" styleClass="outputLabel"/>
+
+                                <h:outputText value="Phone " />
+                                <h:outputText value="# {userWizard.user.phone}" styleClass="outputLabel"/>
+
+                                <h:outputText value="Info: " />
+                                <h:outputText value="# {userWizard.user.info}" styleClass="outputLabel"/>
+
+                                <h:outputText />
+                                <h:outputText />
+                            </h:panelGrid>
+                        </h:panelGrid>
+
+                        <p:commandButton value="Submit" actionListener="# {userWizard.save}" update="growl" process="@this"/>
+                    </p:panel>
+                </p:tab>
+            </p:wizard>
+
+        </h:form>
+
+        <h:form>-->
+
+
+
+            <h1><h:outputText value="Create/Edit"/></h1>
+            <p:scrollPanel mode="native" style="height: 400px;">
+                <h1><h:outputText value="Antecedentes Ocupacionales"/></h1>
+
+                <p:panelGrid columns="2" id="panelAntecedentes" >
+                    <p:outputLabel value="NomEmp:" for="nomEmp" />
+                    <p:inputText id="nomEmp" value="#{pacientesController.antecedenteActual.nomEmp}" title="NomEmp" />
+                    <p:outputLabel value="ActEcoEmp:" for="actEcoEmp" />
+                    <p:inputText id="actEcoEmp" value="#{pacientesController.antecedenteActual.actEcoEmp}" title="ActEcoEmp" />
+                    <p:outputLabel value="Oficio:" for="oficio" />
+                    <p:inputText id="oficio" value="#{pacientesController.antecedenteActual.oficio}" title="Oficio" />
+                    <p:outputLabel value="Antiguedad:" for="antiguedad" />
+                    <p:inputText id="antiguedad" value="#{pacientesController.antecedenteActual.antiguedad}" title="Antiguedad" />
+                    <p:outputLabel value="Riesgos:" for="riesgos" />
+                    <p:inputText id="riesgos" value="#{pacientesController.antecedenteActual.riesgos}" title="Riesgos" />
+                    <p:outputLabel value="Epp:" for="epp" />
+                    <p:inputText id="epp" value="#{pacientesController.antecedenteActual.epp}" title="Epp" />
+
+                    <p:commandButton value="Agregar Material" 
+                                     action="#{pacientesController.agregarAntecedentes}" 
+                                     process="@this panelAntecedentes" 
+                                     update="tablaMateriales panelAntecedentes"/>
+                </p:panelGrid>
+
+                <p:dataTable value="#{pacientesController.itemsAntecedentes}" var="item" id="tablaMateriales">
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="NomEmp"/>
+                        </f:facet>
+                        <h:outputText value="#{item.nomEmp}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="ActEcoEmp"/>
+                        </f:facet>
+                        <h:outputText value="#{item.actEcoEmp}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Oficio"/>
+                        </f:facet>
+                        <h:outputText value="#{item.oficio}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Antiguedad"/>
+                        </f:facet>
+                        <h:outputText value="#{item.antiguedad}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Riesgos"/>
+                        </f:facet>
+                        <h:outputText value="#{item.riesgos}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Epp"/>
+                        </f:facet>
+                        <h:outputText value="#{item.epp}"/>
+                    </p:column>
+                    <p:column headerText="Borrar Antecedente">
+                        <p:commandButton icon="ui-icon-trash"  action="#{pacientesController.eliminar}"
+                                         process="@this" update="tablaMateriales">
+                            <p:confirm header="Confirmación" 
+                                       message="¿Esta seguro que desea eliminar este antecedente?" 
+                                       icon="ui-icon-alert" />
+                            <f:setPropertyActionListener value="#{item}" 
+                                                         target="#{solicitudMaterialesAlmacenController.selectedSolMaterial}"/>
+                            <p:ajax process="@this" update="tablaMateriales"/>
+                        </p:commandButton>
+                    </p:column>
+                </p:dataTable>
+
+                <p:panelGrid columns="2">
+                    <p:outputLabel value="RestriccionesLab:" for="restriccionesLab" />
+                    <p:selectBooleanCheckbox id="restriccionesLab" value="#{pacientesController.examenActual.restriccionesLab}" />
+                    <p:outputLabel value="CualesUno:" for="cualesUno" />
+                    <p:inputText id="cualesUno" value="#{pacientesController.examenActual.cualesUno}" title="CualesUno" />
+                    <p:outputLabel value="AntFam:" for="antFam" />
+                    <p:inputText id="antFam" value="#{pacientesController.examenActual.antFam}" title="AntFam" />
+                    <p:outputLabel value="Hipertension:" for="hipertension" />
+                    <p:selectBooleanCheckbox id="hipertension" value="#{pacientesController.examenActual.hipertension}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_diabetes}" for="diabetes" />
+                    <p:selectBooleanCheckbox id="diabetes" value="#{pacientesController.examenActual.diabetes}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_asma}" for="asma" />
+                    <p:selectBooleanCheckbox id="asma" value="#{pacientesController.examenActual.asma}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_cardiovasculares}" for="cardiovasculares" />
+                    <p:selectBooleanCheckbox id="cardiovasculares" value="#{pacientesController.examenActual.cardiovasculares}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_psiquiatricos}" for="psiquiatricos" />
+                    <p:selectBooleanCheckbox id="psiquiatricos" value="#{pacientesController.examenActual.psiquiatricos}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_epilepsia}" for="epilepsia" />
+                    <p:selectBooleanCheckbox id="epilepsia" value="#{pacientesController.examenActual.epilepsia}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_visuales}" for="visuales" />
+                    <p:selectBooleanCheckbox id="visuales" value="#{pacientesController.examenActual.visuales}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_respiratorias}" for="respiratorias" />
+                    <p:selectBooleanCheckbox id="respiratorias" value="#{pacientesController.examenActual.respiratorias}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_dermatologicos}" for="dermatologicos" />
+                    <p:selectBooleanCheckbox id="dermatologicos" value="#{pacientesController.examenActual.dermatologicos}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_reumatologicos}" for="reumatologicos" />
+                    <p:selectBooleanCheckbox id="reumatologicos" value="#{pacientesController.examenActual.reumatologicos}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_neurologicos}" for="neurologicos" />
+                    <p:selectBooleanCheckbox id="neurologicos" value="#{pacientesController.examenActual.neurologicos}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_varices}" for="varices" />
+                    <p:selectBooleanCheckbox id="varices" value="#{pacientesController.examenActual.varices}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_cancer}" for="cancer" />
+                    <p:selectBooleanCheckbox id="cancer" value="#{pacientesController.examenActual.cancer}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_hipotiroidismo}" for="hipotiroidismo" />
+                    <p:selectBooleanCheckbox id="hipotiroidismo" value="#{pacientesController.examenActual.hipotiroidismo}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_alergicos}" for="alergicos" />
+                    <p:selectBooleanCheckbox id="alergicos" value="#{pacientesController.examenActual.alergicos}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_quimicos}" for="quimicos" />
+                    <p:selectBooleanCheckbox id="quimicos" value="#{pacientesController.examenActual.quimicos}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_traumaticos}" for="traumaticos" />
+                    <p:selectBooleanCheckbox id="traumaticos" value="#{pacientesController.examenActual.traumaticos}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_fumas}" for="fumas" />
+                    <p:selectBooleanCheckbox id="fumas" value="#{pacientesController.examenActual.fumas}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_cuantos}" for="cuantos" />
+                    <p:inputText id="cuantos" value="#{pacientesController.examenActual.cuantos}" title="#{bundle.EditEmoTitle_cuantos}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_tiempoHaceCuanto}" for="tiempoHaceCuanto" />
+                    <p:inputText id="tiempoHaceCuanto" value="#{pacientesController.examenActual.tiempoHaceCuanto}" title="#{bundle.EditEmoTitle_tiempoHaceCuanto}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_exfumador}" for="exfumador" />
+                    <p:selectBooleanCheckbox id="exfumador" value="#{pacientesController.examenActual.exfumador}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_licor}" for="licor" />
+                    <p:selectBooleanCheckbox id="licor" value="#{pacientesController.examenActual.licor}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_habitual}" for="habitual" />
+                    <p:selectBooleanCheckbox id="habitual" value="#{pacientesController.examenActual.habitual}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_deporte}" for="deporte" />
+                    <p:selectBooleanCheckbox id="deporte" value="#{pacientesController.examenActual.deporte}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_queDeporte}" for="queDeporte" />
+                    <p:inputText id="queDeporte" value="#{pacientesController.examenActual.queDeporte}" title="#{bundle.EditEmoTitle_queDeporte}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_cuantasVecesSemana}" for="cuantasVecesSemana" />
+                    <p:inputText id="cuantasVecesSemana" value="#{pacientesController.examenActual.cuantasVecesSemana}" title="#{bundle.EditEmoTitle_cuantasVecesSemana}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_manualidades}" for="manualidades" />
+                    <p:selectBooleanCheckbox id="manualidades" value="#{pacientesController.examenActual.manualidades}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_cualesDos}" for="cualesDos" />
+                    <p:inputText id="cualesDos" value="#{pacientesController.examenActual.cualesDos}" title="#{bundle.EditEmoTitle_cualesDos}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_meranea}" for="meranea" />
+                    <p:inputText id="meranea" value="#{pacientesController.examenActual.meranea}" title="#{bundle.EditEmoTitle_meranea}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_gravida}" for="gravida" />
+                    <p:inputText id="gravida" value="#{pacientesController.examenActual.gravida}" title="#{bundle.EditEmoTitle_gravida}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_partos}" for="partos" />
+                    <p:inputText id="partos" value="#{pacientesController.examenActual.partos}" title="#{bundle.EditEmoTitle_partos}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_cesareas}" for="cesareas" />
+                    <p:inputText id="cesareas" value="#{pacientesController.examenActual.cesareas}" title="#{bundle.EditEmoTitle_cesareas}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_abortos}" for="abortos" />
+                    <p:inputText id="abortos" value="#{pacientesController.examenActual.abortos}" title="#{bundle.EditEmoTitle_abortos}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_hijosVivos}" for="hijosVivos" />
+                    <p:inputText id="hijosVivos" value="#{pacientesController.examenActual.hijosVivos}" title="#{bundle.EditEmoTitle_hijosVivos}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_fechaUltimaMenst}" for="fechaUltimaMenst" />
+                    <p:calendar id="fechaUltimaMenst" pattern="MM/dd/yyyy" value="#{pacientesController.examenActual.fechaUltimaMenst}" title="#{bundle.EditEmoTitle_fechaUltimaMenst}"  showOn="button"/>
+                    <p:outputLabel value="#{bundle.EditEmoLabel_citologia}" for="citologia" />
+                    <p:calendar id="citologia" pattern="MM/dd/yyyy" value="#{pacientesController.examenActual.citologia}" title="#{bundle.EditEmoTitle_citologia}"  showOn="button"/>
+                    <p:outputLabel value="#{bundle.EditEmoLabel_ciclos}" for="ciclos" />
+                    <p:inputText id="ciclos" value="#{pacientesController.examenActual.ciclos}" title="#{bundle.EditEmoTitle_ciclos}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_sintOsteom}" for="sintOsteom" />
+                    <p:selectBooleanCheckbox id="sintOsteom" value="#{pacientesController.examenActual.sintOsteom}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_codos}" for="codos" />
+                    <p:selectBooleanCheckbox id="codos" value="#{pacientesController.examenActual.codos}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_cadera}" for="cadera" />
+                    <p:selectBooleanCheckbox id="cadera" value="#{pacientesController.examenActual.cadera}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_cervical}" for="cervical" />
+                    <p:selectBooleanCheckbox id="cervical" value="#{pacientesController.examenActual.cervical}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_cuelloUno}" for="cuelloUno" />
+                    <p:selectBooleanCheckbox id="cuelloUno" value="#{pacientesController.examenActual.cuelloUno}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_dedos}" for="dedos" />
+                    <p:selectBooleanCheckbox id="dedos" value="#{pacientesController.examenActual.dedos}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_dorsal}" for="dorsal" />
+                    <p:selectBooleanCheckbox id="dorsal" value="#{pacientesController.examenActual.dorsal}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_dorsolumbar}" for="dorsolumbar" />
+                    <p:selectBooleanCheckbox id="dorsolumbar" value="#{pacientesController.examenActual.dorsolumbar}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_hombros}" for="hombros" />
+                    <p:selectBooleanCheckbox id="hombros" value="#{pacientesController.examenActual.hombros}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_lumbosacra}" for="lumbosacra" />
+                    <p:selectBooleanCheckbox id="lumbosacra" value="#{pacientesController.examenActual.lumbosacra}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_manos}" for="manos" />
+                    <p:selectBooleanCheckbox id="manos" value="#{pacientesController.examenActual.manos}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_muniecas}" for="muniecas" />
+                    <p:selectBooleanCheckbox id="muniecas" value="#{pacientesController.examenActual.muniecas}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_pies}" for="pies" />
+                    <p:selectBooleanCheckbox id="pies" value="#{pacientesController.examenActual.pies}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_rodillasUno}" for="rodillasUno" />
+                    <p:selectBooleanCheckbox id="rodillasUno" value="#{pacientesController.examenActual.rodillasUno}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_descOsteom}" for="descOsteom" />
+                    <p:inputText id="descOsteom" value="#{pacientesController.examenActual.descOsteom}" title="#{bundle.EditEmoTitle_descOsteom}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_otros}" for="otros" />
+                    <p:inputText id="otros" value="#{pacientesController.examenActual.otros}" title="#{bundle.EditEmoTitle_otros}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_revisionSistemas}" for="revisionSistemas" />
+                    <p:selectBooleanCheckbox id="revisionSistemas" value="#{pacientesController.examenActual.revisionSistemas}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_descSiste}" for="descSiste" />
+                    <p:inputText id="descSiste" value="#{pacientesController.examenActual.descSiste}" title="#{bundle.EditEmoTitle_descSiste}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_apariencia}" for="apariencia" />
+                    <p:inputText id="apariencia" value="#{pacientesController.examenActual.apariencia}" title="#{bundle.EditEmoTitle_apariencia}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_dominancia}" for="dominancia" />
+                    <p:inputText id="dominancia" value="#{pacientesController.examenActual.dominancia}" title="#{bundle.EditEmoTitle_dominancia}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_peso}" for="peso" />
+                    <p:inputText id="peso" value="#{pacientesController.examenActual.peso}" title="#{bundle.EditEmoTitle_peso}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_talla}" for="talla" />
+                    <p:inputText id="talla" value="#{pacientesController.examenActual.talla}" title="#{bundle.EditEmoTitle_talla}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_imc}" for="imc" />
+                    <p:inputText id="imc" value="#{pacientesController.examenActual.imc}" title="#{bundle.EditEmoTitle_imc}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_tas}" for="tas" />
+                    <p:inputText id="tas" value="#{pacientesController.examenActual.tas}" title="#{bundle.EditEmoTitle_tas}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_presSist}" for="presSist" />
+                    <p:inputText id="presSist" value="#{pacientesController.examenActual.presSist}" title="#{bundle.EditEmoTitle_presSist}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_tad}" for="tad" />
+                    <p:inputText id="tad" value="#{pacientesController.examenActual.tad}" title="#{bundle.EditEmoTitle_tad}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_fc}" for="fc" />
+                    <p:inputText id="fc" value="#{pacientesController.examenActual.fc}" title="#{bundle.EditEmoTitle_fc}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_fr}" for="fr" />
+                    <p:inputText id="fr" value="#{pacientesController.examenActual.fr}" title="#{bundle.EditEmoTitle_fr}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_it}" for="it" />
+                    <p:inputText id="it" value="#{pacientesController.examenActual.it}" title="#{bundle.EditEmoTitle_it}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_abdomen}" for="abdomen" />
+                    <p:inputText id="abdomen" value="#{pacientesController.examenActual.abdomen}" title="#{bundle.EditEmoTitle_abdomen}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_hernias}" for="hernias" />
+                    <p:selectBooleanCheckbox id="hernias" value="#{pacientesController.examenActual.hernias}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_arcoMovilidadArt}" for="arcoMovilidadArt" />
+                    <p:inputText id="arcoMovilidadArt" value="#{pacientesController.examenActual.arcoMovilidadArt}" title="#{bundle.EditEmoTitle_arcoMovilidadArt}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_boca}" for="boca" />
+                    <p:inputText id="boca" value="#{pacientesController.examenActual.boca}" title="#{bundle.EditEmoTitle_boca}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_cicaTatu}" for="cicaTatu" />
+                    <p:selectBooleanCheckbox id="cicaTatu" value="#{pacientesController.examenActual.cicaTatu}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_columCerv}" for="columCerv" />
+                    <p:inputText id="columCerv" value="#{pacientesController.examenActual.columCerv}" title="#{bundle.EditEmoTitle_columCerv}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_columLumbo}" for="columLumbo" />
+                    <p:inputText id="columLumbo" value="#{pacientesController.examenActual.columLumbo}" title="#{bundle.EditEmoTitle_columLumbo}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_columTora}" for="columTora" />
+                    <p:inputText id="columTora" value="#{pacientesController.examenActual.columTora}" title="#{bundle.EditEmoTitle_columTora}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_columVertebral}" for="columVertebral" />
+                    <p:inputText id="columVertebral" value="#{pacientesController.examenActual.columVertebral}" title="#{bundle.EditEmoTitle_columVertebral}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_corazon}" for="corazon" />
+                    <p:inputText id="corazon" value="#{pacientesController.examenActual.corazon}" title="#{bundle.EditEmoTitle_corazon}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_cuelloDos}" for="cuelloDos" />
+                    <p:inputText id="cuelloDos" value="#{pacientesController.examenActual.cuelloDos}" title="#{bundle.EditEmoTitle_cuelloDos}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_filkenstein}" for="filkenstein" />
+                    <p:inputText id="filkenstein" value="#{pacientesController.examenActual.filkenstein}" title="#{bundle.EditEmoTitle_filkenstein}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_genitales}" for="genitales" />
+                    <p:inputText id="genitales" value="#{pacientesController.examenActual.genitales}" title="#{bundle.EditEmoTitle_genitales}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_lasegue}" for="lasegue" />
+                    <p:inputText id="lasegue" value="#{pacientesController.examenActual.lasegue}" title="#{bundle.EditEmoTitle_lasegue}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_limitacionFuncional}" for="limitacionFuncional" />
+                    <p:inputText id="limitacionFuncional" value="#{pacientesController.examenActual.limitacionFuncional}" title="#{bundle.EditEmoTitle_limitacionFuncional}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_marchaPuntas}" for="marchaPuntas" />
+                    <p:inputText id="marchaPuntas" value="#{pacientesController.examenActual.marchaPuntas}" title="#{bundle.EditEmoTitle_marchaPuntas}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_marchaTalones}" for="marchaTalones" />
+                    <p:inputText id="marchaTalones" value="#{pacientesController.examenActual.marchaTalones}" title="#{bundle.EditEmoTitle_marchaTalones}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_miembrosInf}" for="miembrosInf" />
+                    <p:inputText id="miembrosInf" value="#{pacientesController.examenActual.miembrosInf}" title="#{bundle.EditEmoTitle_miembrosInf}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_miembrosSup}" for="miembrosSup" />
+                    <p:inputText id="miembrosSup" value="#{pacientesController.examenActual.miembrosSup}" title="#{bundle.EditEmoTitle_miembrosSup}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_oidos}" for="oidos" />
+                    <p:inputText id="oidos" value="#{pacientesController.examenActual.oidos}" title="#{bundle.EditEmoTitle_oidos}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_ojos}" for="ojos" />
+                    <p:inputText id="ojos" value="#{pacientesController.examenActual.ojos}" title="#{bundle.EditEmoTitle_ojos}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_panel}" for="panel" />
+                    <p:inputText id="panel" value="#{pacientesController.examenActual.panel}" title="#{bundle.EditEmoTitle_panel}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_piel}" for="piel" />
+                    <p:inputText id="piel" value="#{pacientesController.examenActual.piel}" title="#{bundle.EditEmoTitle_piel}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_pulmones}" for="pulmones" />
+                    <p:inputText id="pulmones" value="#{pacientesController.examenActual.pulmones}" title="#{bundle.EditEmoTitle_pulmones}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_rodillasDos}" for="rodillasDos" />
+                    <p:inputText id="rodillasDos" value="#{pacientesController.examenActual.rodillasDos}" title="#{bundle.EditEmoTitle_rodillasDos}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_silla}" for="silla" />
+                    <p:inputText id="silla" value="#{pacientesController.examenActual.silla}" title="#{bundle.EditEmoTitle_silla}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_tinel}" for="tinel" />
+                    <p:inputText id="tinel" value="#{pacientesController.examenActual.tinel}" title="#{bundle.EditEmoTitle_tinel}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_trabajoAlturas}" for="trabajoAlturas" />
+                    <p:inputText id="trabajoAlturas" value="#{pacientesController.examenActual.trabajoAlturas}" title="#{bundle.EditEmoTitle_trabajoAlturas}" />
+                    <p:outputLabel value="#{bundle.EditEmoLabel_pruebasVestibular}" for="pruebasVestibular" />
+                    <p:selectBooleanCheckbox id="pruebasVestibular" value="#{pacientesController.examenActual.pruebasVestibular}" />
+                </p:panelGrid> 
+            </p:scrollPanel>
+
+            <p:commandButton action="#{pacientesController.addEmo()}" value="guardar"/>
+        </h:form>
+
+    </h:body>
+</html>
+

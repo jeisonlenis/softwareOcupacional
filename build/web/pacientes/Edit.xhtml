@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="PacientesEditDlg" widgetVar="PacientesEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditPacientesTitle}">
+            <h:form id="PacientesEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{pacientesController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditPacientesLabel_idPaciente}" for="idPaciente" />
+                        <p:inputText id="idPaciente" value="#{pacientesController.selected.idPaciente}" title="#{bundle.EditPacientesTitle_idPaciente}" required="true" requiredMessage="#{bundle.EditPacientesRequiredMessage_idPaciente}"/>
+                        <p:outputLabel value="#{bundle.EditPacientesLabel_nombres}" for="nombres" />
+                        <p:inputText id="nombres" value="#{pacientesController.selected.nombres}" title="#{bundle.EditPacientesTitle_nombres}" required="true" requiredMessage="#{bundle.EditPacientesRequiredMessage_nombres}"/>
+                        <p:outputLabel value="#{bundle.EditPacientesLabel_apellidos}" for="apellidos" />
+                        <p:inputText id="apellidos" value="#{pacientesController.selected.apellidos}" title="#{bundle.EditPacientesTitle_apellidos}" required="true" requiredMessage="#{bundle.EditPacientesRequiredMessage_apellidos}"/>
+                        <p:outputLabel value="#{bundle.EditPacientesLabel_tipoDoc}" for="tipoDoc" />
+                        <p:inputText id="tipoDoc" value="#{pacientesController.selected.tipoDoc}" title="#{bundle.EditPacientesTitle_tipoDoc}" required="true" requiredMessage="#{bundle.EditPacientesRequiredMessage_tipoDoc}"/>
+                        <p:outputLabel value="#{bundle.EditPacientesLabel_numDoc}" for="numDoc" />
+                        <p:inputText id="numDoc" value="#{pacientesController.selected.numDoc}" title="#{bundle.EditPacientesTitle_numDoc}" required="true" requiredMessage="#{bundle.EditPacientesRequiredMessage_numDoc}"/>
+                        <p:outputLabel value="#{bundle.EditPacientesLabel_fecNac}" for="fecNac" />
+                        <p:calendar id="fecNac" pattern="MM/dd/yyyy" value="#{pacientesController.selected.fecNac}" title="#{bundle.EditPacientesTitle_fecNac}" required="true" requiredMessage="#{bundle.EditPacientesRequiredMessage_fecNac}" showOn="button"/>
+                        <p:outputLabel value="#{bundle.EditPacientesLabel_edad}" for="edad" />
+                        <p:inputText id="edad" value="#{pacientesController.selected.edad}" title="#{bundle.EditPacientesTitle_edad}" required="true" requiredMessage="#{bundle.EditPacientesRequiredMessage_edad}"/>
+                        <p:outputLabel value="#{bundle.EditPacientesLabel_telCel}" for="telCel" />
+                        <p:inputText id="telCel" value="#{pacientesController.selected.telCel}" title="#{bundle.EditPacientesTitle_telCel}" required="true" requiredMessage="#{bundle.EditPacientesRequiredMessage_telCel}"/>
+                        <p:outputLabel value="#{bundle.EditPacientesLabel_direccion}" for="direccion" />
+                        <p:inputText id="direccion" value="#{pacientesController.selected.direccion}" title="#{bundle.EditPacientesTitle_direccion}" required="true" requiredMessage="#{bundle.EditPacientesRequiredMessage_direccion}"/>
+                        <p:outputLabel value="#{bundle.EditPacientesLabel_ciudad}" for="ciudad" />
+                        <p:inputText id="ciudad" value="#{pacientesController.selected.ciudad}" title="#{bundle.EditPacientesTitle_ciudad}" required="true" requiredMessage="#{bundle.EditPacientesRequiredMessage_ciudad}"/>
+                        <p:outputLabel value="#{bundle.EditPacientesLabel_estCiv}" for="estCiv" />
+                        <p:inputText id="estCiv" value="#{pacientesController.selected.estCiv}" title="#{bundle.EditPacientesTitle_estCiv}" required="true" requiredMessage="#{bundle.EditPacientesRequiredMessage_estCiv}"/>
+                        <p:outputLabel value="#{bundle.EditPacientesLabel_nivAca}" for="nivAca" />
+                        <p:inputText id="nivAca" value="#{pacientesController.selected.nivAca}" title="#{bundle.EditPacientesTitle_nivAca}" required="true" requiredMessage="#{bundle.EditPacientesRequiredMessage_nivAca}"/>
+                        <p:outputLabel value="#{bundle.EditPacientesLabel_afp}" for="afp" />
+                        <p:inputText id="afp" value="#{pacientesController.selected.afp}" title="#{bundle.EditPacientesTitle_afp}" required="true" requiredMessage="#{bundle.EditPacientesRequiredMessage_afp}"/>
+                        <p:outputLabel value="#{bundle.EditPacientesLabel_eps}" for="eps" />
+                        <p:inputText id="eps" value="#{pacientesController.selected.eps}" title="#{bundle.EditPacientesTitle_eps}" required="true" requiredMessage="#{bundle.EditPacientesRequiredMessage_eps}"/>
+                        <p:outputLabel value="#{bundle.EditPacientesLabel_arl}" for="arl" />
+                        <p:inputText id="arl" value="#{pacientesController.selected.arl}" title="#{bundle.EditPacientesTitle_arl}" required="true" requiredMessage="#{bundle.EditPacientesRequiredMessage_arl}"/>
+                        <p:outputLabel value="#{bundle.EditPacientesLabel_numHijos}" for="numHijos" />
+                        <p:inputText id="numHijos" value="#{pacientesController.selected.numHijos}" title="#{bundle.EditPacientesTitle_numHijos}" required="true" requiredMessage="#{bundle.EditPacientesRequiredMessage_numHijos}"/>
+                        <p:outputLabel value="#{bundle.EditPacientesLabel_genero}" for="genero" />
+                        <p:inputText id="genero" value="#{pacientesController.selected.genero}" title="#{bundle.EditPacientesTitle_genero}" required="true" requiredMessage="#{bundle.EditPacientesRequiredMessage_genero}"/>
+                        <p:outputLabel value="#{bundle.EditPacientesLabel_idClem}" for="idClem" />
+                        <p:selectOneMenu id="idClem" value="#{pacientesController.selected.idClem}" required="true" requiredMessage="#{bundle.EditPacientesRequiredMessage_idClem}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{empresasController.itemsAvailableSelectOne}"
+                                           var="idClemItem"
+                                           itemValue="#{idClemItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{pacientesController.update}" value="#{bundle.Save}" update="display,:PacientesListForm:datalist,:growl" oncomplete="handleSubmit(args, 'PacientesEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="PacientesEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

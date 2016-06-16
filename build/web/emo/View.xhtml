@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="EmoViewDlg" widgetVar="EmoViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewEmoTitle}">
+            <h:form id="EmoViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{emoController.selected != null}">
+                        <h:outputText value="#{bundle.ViewEmoLabel_restriccionesLab}"/>
+                        <p:selectBooleanCheckbox value="#{emoController.selected.restriccionesLab}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_cualesUno}"/>
+                        <h:outputText value="#{emoController.selected.cualesUno}" title="#{bundle.ViewEmoTitle_cualesUno}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_antFam}"/>
+                        <h:outputText value="#{emoController.selected.antFam}" title="#{bundle.ViewEmoTitle_antFam}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_hipertension}"/>
+                        <p:selectBooleanCheckbox value="#{emoController.selected.hipertension}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_diabetes}"/>
+                        <p:selectBooleanCheckbox value="#{emoController.selected.diabetes}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_asma}"/>
+                        <p:selectBooleanCheckbox value="#{emoController.selected.asma}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_cardiovasculares}"/>
+                        <p:selectBooleanCheckbox value="#{emoController.selected.cardiovasculares}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_psiquiatricos}"/>
+                        <p:selectBooleanCheckbox value="#{emoController.selected.psiquiatricos}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_epilepsia}"/>
+                        <p:selectBooleanCheckbox value="#{emoController.selected.epilepsia}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_visuales}"/>
+                        <p:selectBooleanCheckbox value="#{emoController.selected.visuales}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_respiratorias}"/>
+                        <p:selectBooleanCheckbox value="#{emoController.selected.respiratorias}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_dermatologicos}"/>
+                        <p:selectBooleanCheckbox value="#{emoController.selected.dermatologicos}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_reumatologicos}"/>
+                        <p:selectBooleanCheckbox value="#{emoController.selected.reumatologicos}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_neurologicos}"/>
+                        <p:selectBooleanCheckbox value="#{emoController.selected.neurologicos}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_varices}"/>
+                        <p:selectBooleanCheckbox value="#{emoController.selected.varices}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_cancer}"/>
+                        <p:selectBooleanCheckbox value="#{emoController.selected.cancer}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_hipotiroidismo}"/>
+                        <p:selectBooleanCheckbox value="#{emoController.selected.hipotiroidismo}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_alergicos}"/>
+                        <p:selectBooleanCheckbox value="#{emoController.selected.alergicos}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_quimicos}"/>
+                        <p:selectBooleanCheckbox value="#{emoController.selected.quimicos}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_traumaticos}"/>
+                        <p:selectBooleanCheckbox value="#{emoController.selected.traumaticos}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_fumas}"/>
+                        <p:selectBooleanCheckbox value="#{emoController.selected.fumas}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_cuantos}"/>
+                        <h:outputText value="#{emoController.selected.cuantos}" title="#{bundle.ViewEmoTitle_cuantos}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_tiempoHaceCuanto}"/>
+                        <h:outputText value="#{emoController.selected.tiempoHaceCuanto}" title="#{bundle.ViewEmoTitle_tiempoHaceCuanto}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_exfumador}"/>
+                        <p:selectBooleanCheckbox value="#{emoController.selected.exfumador}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_licor}"/>
+                        <p:selectBooleanCheckbox value="#{emoController.selected.licor}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_habitual}"/>
+                        <p:selectBooleanCheckbox value="#{emoController.selected.habitual}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_deporte}"/>
+                        <p:selectBooleanCheckbox value="#{emoController.selected.deporte}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_queDeporte}"/>
+                        <h:outputText value="#{emoController.selected.queDeporte}" title="#{bundle.ViewEmoTitle_queDeporte}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_cuantasVecesSemana}"/>
+                        <h:outputText value="#{emoController.selected.cuantasVecesSemana}" title="#{bundle.ViewEmoTitle_cuantasVecesSemana}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_manualidades}"/>
+                        <p:selectBooleanCheckbox value="#{emoController.selected.manualidades}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_cualesDos}"/>
+                        <h:outputText value="#{emoController.selected.cualesDos}" title="#{bundle.ViewEmoTitle_cualesDos}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_meranea}"/>
+                        <h:outputText value="#{emoController.selected.meranea}" title="#{bundle.ViewEmoTitle_meranea}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_gravida}"/>
+                        <h:outputText value="#{emoController.selected.gravida}" title="#{bundle.ViewEmoTitle_gravida}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_partos}"/>
+                        <h:outputText value="#{emoController.selected.partos}" title="#{bundle.ViewEmoTitle_partos}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_cesareas}"/>
+                        <h:outputText value="#{emoController.selected.cesareas}" title="#{bundle.ViewEmoTitle_cesareas}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_abortos}"/>
+                        <h:outputText value="#{emoController.selected.abortos}" title="#{bundle.ViewEmoTitle_abortos}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_hijosVivos}"/>
+                        <h:outputText value="#{emoController.selected.hijosVivos}" title="#{bundle.ViewEmoTitle_hijosVivos}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_fechaUltimaMenst}"/>
+                        <h:outputText value="#{emoController.selected.fechaUltimaMenst}" title="#{bundle.ViewEmoTitle_fechaUltimaMenst}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewEmoLabel_citologia}"/>
+                        <h:outputText value="#{emoController.selected.citologia}" title="#{bundle.ViewEmoTitle_citologia}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewEmoLabel_ciclos}"/>
+                        <h:outputText value="#{emoController.selected.ciclos}" title="#{bundle.ViewEmoTitle_ciclos}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_sintOsteom}"/>
+                        <p:selectBooleanCheckbox value="#{emoController.selected.sintOsteom}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_codos}"/>
+                        <p:selectBooleanCheckbox value="#{emoController.selected.codos}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_cadera}"/>
+                        <p:selectBooleanCheckbox value="#{emoController.selected.cadera}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_cervical}"/>
+                        <p:selectBooleanCheckbox value="#{emoController.selected.cervical}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_cuelloUno}"/>
+                        <p:selectBooleanCheckbox value="#{emoController.selected.cuelloUno}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_dedos}"/>
+                        <p:selectBooleanCheckbox value="#{emoController.selected.dedos}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_dorsal}"/>
+                        <p:selectBooleanCheckbox value="#{emoController.selected.dorsal}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_dorsolumbar}"/>
+                        <p:selectBooleanCheckbox value="#{emoController.selected.dorsolumbar}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_hombros}"/>
+                        <p:selectBooleanCheckbox value="#{emoController.selected.hombros}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_lumbosacra}"/>
+                        <p:selectBooleanCheckbox value="#{emoController.selected.lumbosacra}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_manos}"/>
+                        <p:selectBooleanCheckbox value="#{emoController.selected.manos}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_muniecas}"/>
+                        <p:selectBooleanCheckbox value="#{emoController.selected.muniecas}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_pies}"/>
+                        <p:selectBooleanCheckbox value="#{emoController.selected.pies}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_rodillasUno}"/>
+                        <p:selectBooleanCheckbox value="#{emoController.selected.rodillasUno}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_descOsteom}"/>
+                        <h:outputText value="#{emoController.selected.descOsteom}" title="#{bundle.ViewEmoTitle_descOsteom}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_otros}"/>
+                        <h:outputText value="#{emoController.selected.otros}" title="#{bundle.ViewEmoTitle_otros}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_revisionSistemas}"/>
+                        <p:selectBooleanCheckbox value="#{emoController.selected.revisionSistemas}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_descSiste}"/>
+                        <h:outputText value="#{emoController.selected.descSiste}" title="#{bundle.ViewEmoTitle_descSiste}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_apariencia}"/>
+                        <h:outputText value="#{emoController.selected.apariencia}" title="#{bundle.ViewEmoTitle_apariencia}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_dominancia}"/>
+                        <h:outputText value="#{emoController.selected.dominancia}" title="#{bundle.ViewEmoTitle_dominancia}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_peso}"/>
+                        <h:outputText value="#{emoController.selected.peso}" title="#{bundle.ViewEmoTitle_peso}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_talla}"/>
+                        <h:outputText value="#{emoController.selected.talla}" title="#{bundle.ViewEmoTitle_talla}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_imc}"/>
+                        <h:outputText value="#{emoController.selected.imc}" title="#{bundle.ViewEmoTitle_imc}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_tas}"/>
+                        <h:outputText value="#{emoController.selected.tas}" title="#{bundle.ViewEmoTitle_tas}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_presSist}"/>
+                        <h:outputText value="#{emoController.selected.presSist}" title="#{bundle.ViewEmoTitle_presSist}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_tad}"/>
+                        <h:outputText value="#{emoController.selected.tad}" title="#{bundle.ViewEmoTitle_tad}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_fc}"/>
+                        <h:outputText value="#{emoController.selected.fc}" title="#{bundle.ViewEmoTitle_fc}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_fr}"/>
+                        <h:outputText value="#{emoController.selected.fr}" title="#{bundle.ViewEmoTitle_fr}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_it}"/>
+                        <h:outputText value="#{emoController.selected.it}" title="#{bundle.ViewEmoTitle_it}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_abdomen}"/>
+                        <h:outputText value="#{emoController.selected.abdomen}" title="#{bundle.ViewEmoTitle_abdomen}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_hernias}"/>
+                        <p:selectBooleanCheckbox value="#{emoController.selected.hernias}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_arcoMovilidadArt}"/>
+                        <h:outputText value="#{emoController.selected.arcoMovilidadArt}" title="#{bundle.ViewEmoTitle_arcoMovilidadArt}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_boca}"/>
+                        <h:outputText value="#{emoController.selected.boca}" title="#{bundle.ViewEmoTitle_boca}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_cicaTatu}"/>
+                        <p:selectBooleanCheckbox value="#{emoController.selected.cicaTatu}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_columCerv}"/>
+                        <h:outputText value="#{emoController.selected.columCerv}" title="#{bundle.ViewEmoTitle_columCerv}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_columLumbo}"/>
+                        <h:outputText value="#{emoController.selected.columLumbo}" title="#{bundle.ViewEmoTitle_columLumbo}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_columTora}"/>
+                        <h:outputText value="#{emoController.selected.columTora}" title="#{bundle.ViewEmoTitle_columTora}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_columVertebral}"/>
+                        <h:outputText value="#{emoController.selected.columVertebral}" title="#{bundle.ViewEmoTitle_columVertebral}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_corazon}"/>
+                        <h:outputText value="#{emoController.selected.corazon}" title="#{bundle.ViewEmoTitle_corazon}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_cuelloDos}"/>
+                        <h:outputText value="#{emoController.selected.cuelloDos}" title="#{bundle.ViewEmoTitle_cuelloDos}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_filkenstein}"/>
+                        <h:outputText value="#{emoController.selected.filkenstein}" title="#{bundle.ViewEmoTitle_filkenstein}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_genitales}"/>
+                        <h:outputText value="#{emoController.selected.genitales}" title="#{bundle.ViewEmoTitle_genitales}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_lasegue}"/>
+                        <h:outputText value="#{emoController.selected.lasegue}" title="#{bundle.ViewEmoTitle_lasegue}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_limitacionFuncional}"/>
+                        <h:outputText value="#{emoController.selected.limitacionFuncional}" title="#{bundle.ViewEmoTitle_limitacionFuncional}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_marchaPuntas}"/>
+                        <h:outputText value="#{emoController.selected.marchaPuntas}" title="#{bundle.ViewEmoTitle_marchaPuntas}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_marchaTalones}"/>
+                        <h:outputText value="#{emoController.selected.marchaTalones}" title="#{bundle.ViewEmoTitle_marchaTalones}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_miembrosInf}"/>
+                        <h:outputText value="#{emoController.selected.miembrosInf}" title="#{bundle.ViewEmoTitle_miembrosInf}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_miembrosSup}"/>
+                        <h:outputText value="#{emoController.selected.miembrosSup}" title="#{bundle.ViewEmoTitle_miembrosSup}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_oidos}"/>
+                        <h:outputText value="#{emoController.selected.oidos}" title="#{bundle.ViewEmoTitle_oidos}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_ojos}"/>
+                        <h:outputText value="#{emoController.selected.ojos}" title="#{bundle.ViewEmoTitle_ojos}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_panel}"/>
+                        <h:outputText value="#{emoController.selected.panel}" title="#{bundle.ViewEmoTitle_panel}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_piel}"/>
+                        <h:outputText value="#{emoController.selected.piel}" title="#{bundle.ViewEmoTitle_piel}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_pulmones}"/>
+                        <h:outputText value="#{emoController.selected.pulmones}" title="#{bundle.ViewEmoTitle_pulmones}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_rodillasDos}"/>
+                        <h:outputText value="#{emoController.selected.rodillasDos}" title="#{bundle.ViewEmoTitle_rodillasDos}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_silla}"/>
+                        <h:outputText value="#{emoController.selected.silla}" title="#{bundle.ViewEmoTitle_silla}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_tinel}"/>
+                        <h:outputText value="#{emoController.selected.tinel}" title="#{bundle.ViewEmoTitle_tinel}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_trabajoAlturas}"/>
+                        <h:outputText value="#{emoController.selected.trabajoAlturas}" title="#{bundle.ViewEmoTitle_trabajoAlturas}"/>
+                        <h:outputText value="#{bundle.ViewEmoLabel_pruebasVestibular}"/>
+                        <p:selectBooleanCheckbox value="#{emoController.selected.pruebasVestibular}" disabled="true"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="EmoViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

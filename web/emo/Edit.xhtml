@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+        <p:dialog id="EmoEditDlg" widgetVar="EmoEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditEmoTitle}">
+            <h:form id="EmoEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{emoController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditEmoLabel_restriccionesLab}" for="restriccionesLab" />
+                        <p:selectBooleanCheckbox id="restriccionesLab" value="#{emoController.selected.restriccionesLab}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_cualesUno}" for="cualesUno" />
+                        <p:inputText id="cualesUno" value="#{emoController.selected.cualesUno}" title="#{bundle.EditEmoTitle_cualesUno}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_antFam}" for="antFam" />
+                        <p:inputText id="antFam" value="#{emoController.selected.antFam}" title="#{bundle.EditEmoTitle_antFam}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_hipertension}" for="hipertension" />
+                        <p:selectBooleanCheckbox id="hipertension" value="#{emoController.selected.hipertension}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_diabetes}" for="diabetes" />
+                        <p:selectBooleanCheckbox id="diabetes" value="#{emoController.selected.diabetes}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_asma}" for="asma" />
+                        <p:selectBooleanCheckbox id="asma" value="#{emoController.selected.asma}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_cardiovasculares}" for="cardiovasculares" />
+                        <p:selectBooleanCheckbox id="cardiovasculares" value="#{emoController.selected.cardiovasculares}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_psiquiatricos}" for="psiquiatricos" />
+                        <p:selectBooleanCheckbox id="psiquiatricos" value="#{emoController.selected.psiquiatricos}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_epilepsia}" for="epilepsia" />
+                        <p:selectBooleanCheckbox id="epilepsia" value="#{emoController.selected.epilepsia}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_visuales}" for="visuales" />
+                        <p:selectBooleanCheckbox id="visuales" value="#{emoController.selected.visuales}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_respiratorias}" for="respiratorias" />
+                        <p:selectBooleanCheckbox id="respiratorias" value="#{emoController.selected.respiratorias}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_dermatologicos}" for="dermatologicos" />
+                        <p:selectBooleanCheckbox id="dermatologicos" value="#{emoController.selected.dermatologicos}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_reumatologicos}" for="reumatologicos" />
+                        <p:selectBooleanCheckbox id="reumatologicos" value="#{emoController.selected.reumatologicos}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_neurologicos}" for="neurologicos" />
+                        <p:selectBooleanCheckbox id="neurologicos" value="#{emoController.selected.neurologicos}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_varices}" for="varices" />
+                        <p:selectBooleanCheckbox id="varices" value="#{emoController.selected.varices}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_cancer}" for="cancer" />
+                        <p:selectBooleanCheckbox id="cancer" value="#{emoController.selected.cancer}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_hipotiroidismo}" for="hipotiroidismo" />
+                        <p:selectBooleanCheckbox id="hipotiroidismo" value="#{emoController.selected.hipotiroidismo}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_alergicos}" for="alergicos" />
+                        <p:selectBooleanCheckbox id="alergicos" value="#{emoController.selected.alergicos}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_quimicos}" for="quimicos" />
+                        <p:selectBooleanCheckbox id="quimicos" value="#{emoController.selected.quimicos}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_traumaticos}" for="traumaticos" />
+                        <p:selectBooleanCheckbox id="traumaticos" value="#{emoController.selected.traumaticos}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_fumas}" for="fumas" />
+                        <p:selectBooleanCheckbox id="fumas" value="#{emoController.selected.fumas}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_cuantos}" for="cuantos" />
+                        <p:inputText id="cuantos" value="#{emoController.selected.cuantos}" title="#{bundle.EditEmoTitle_cuantos}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_tiempoHaceCuanto}" for="tiempoHaceCuanto" />
+                        <p:inputText id="tiempoHaceCuanto" value="#{emoController.selected.tiempoHaceCuanto}" title="#{bundle.EditEmoTitle_tiempoHaceCuanto}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_exfumador}" for="exfumador" />
+                        <p:selectBooleanCheckbox id="exfumador" value="#{emoController.selected.exfumador}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_licor}" for="licor" />
+                        <p:selectBooleanCheckbox id="licor" value="#{emoController.selected.licor}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_habitual}" for="habitual" />
+                        <p:selectBooleanCheckbox id="habitual" value="#{emoController.selected.habitual}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_deporte}" for="deporte" />
+                        <p:selectBooleanCheckbox id="deporte" value="#{emoController.selected.deporte}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_queDeporte}" for="queDeporte" />
+                        <p:inputText id="queDeporte" value="#{emoController.selected.queDeporte}" title="#{bundle.EditEmoTitle_queDeporte}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_cuantasVecesSemana}" for="cuantasVecesSemana" />
+                        <p:inputText id="cuantasVecesSemana" value="#{emoController.selected.cuantasVecesSemana}" title="#{bundle.EditEmoTitle_cuantasVecesSemana}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_manualidades}" for="manualidades" />
+                        <p:selectBooleanCheckbox id="manualidades" value="#{emoController.selected.manualidades}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_cualesDos}" for="cualesDos" />
+                        <p:inputText id="cualesDos" value="#{emoController.selected.cualesDos}" title="#{bundle.EditEmoTitle_cualesDos}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_meranea}" for="meranea" />
+                        <p:inputText id="meranea" value="#{emoController.selected.meranea}" title="#{bundle.EditEmoTitle_meranea}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_gravida}" for="gravida" />
+                        <p:inputText id="gravida" value="#{emoController.selected.gravida}" title="#{bundle.EditEmoTitle_gravida}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_partos}" for="partos" />
+                        <p:inputText id="partos" value="#{emoController.selected.partos}" title="#{bundle.EditEmoTitle_partos}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_cesareas}" for="cesareas" />
+                        <p:inputText id="cesareas" value="#{emoController.selected.cesareas}" title="#{bundle.EditEmoTitle_cesareas}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_abortos}" for="abortos" />
+                        <p:inputText id="abortos" value="#{emoController.selected.abortos}" title="#{bundle.EditEmoTitle_abortos}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_hijosVivos}" for="hijosVivos" />
+                        <p:inputText id="hijosVivos" value="#{emoController.selected.hijosVivos}" title="#{bundle.EditEmoTitle_hijosVivos}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_fechaUltimaMenst}" for="fechaUltimaMenst" />
+                        <p:calendar id="fechaUltimaMenst" pattern="MM/dd/yyyy" value="#{emoController.selected.fechaUltimaMenst}" title="#{bundle.EditEmoTitle_fechaUltimaMenst}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.EditEmoLabel_citologia}" for="citologia" />
+                        <p:calendar id="citologia" pattern="MM/dd/yyyy" value="#{emoController.selected.citologia}" title="#{bundle.EditEmoTitle_citologia}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.EditEmoLabel_ciclos}" for="ciclos" />
+                        <p:inputText id="ciclos" value="#{emoController.selected.ciclos}" title="#{bundle.EditEmoTitle_ciclos}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_sintOsteom}" for="sintOsteom" />
+                        <p:selectBooleanCheckbox id="sintOsteom" value="#{emoController.selected.sintOsteom}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_codos}" for="codos" />
+                        <p:selectBooleanCheckbox id="codos" value="#{emoController.selected.codos}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_cadera}" for="cadera" />
+                        <p:selectBooleanCheckbox id="cadera" value="#{emoController.selected.cadera}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_cervical}" for="cervical" />
+                        <p:selectBooleanCheckbox id="cervical" value="#{emoController.selected.cervical}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_cuelloUno}" for="cuelloUno" />
+                        <p:selectBooleanCheckbox id="cuelloUno" value="#{emoController.selected.cuelloUno}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_dedos}" for="dedos" />
+                        <p:selectBooleanCheckbox id="dedos" value="#{emoController.selected.dedos}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_dorsal}" for="dorsal" />
+                        <p:selectBooleanCheckbox id="dorsal" value="#{emoController.selected.dorsal}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_dorsolumbar}" for="dorsolumbar" />
+                        <p:selectBooleanCheckbox id="dorsolumbar" value="#{emoController.selected.dorsolumbar}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_hombros}" for="hombros" />
+                        <p:selectBooleanCheckbox id="hombros" value="#{emoController.selected.hombros}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_lumbosacra}" for="lumbosacra" />
+                        <p:selectBooleanCheckbox id="lumbosacra" value="#{emoController.selected.lumbosacra}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_manos}" for="manos" />
+                        <p:selectBooleanCheckbox id="manos" value="#{emoController.selected.manos}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_muniecas}" for="muniecas" />
+                        <p:selectBooleanCheckbox id="muniecas" value="#{emoController.selected.muniecas}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_pies}" for="pies" />
+                        <p:selectBooleanCheckbox id="pies" value="#{emoController.selected.pies}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_rodillasUno}" for="rodillasUno" />
+                        <p:selectBooleanCheckbox id="rodillasUno" value="#{emoController.selected.rodillasUno}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_descOsteom}" for="descOsteom" />
+                        <p:inputText id="descOsteom" value="#{emoController.selected.descOsteom}" title="#{bundle.EditEmoTitle_descOsteom}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_otros}" for="otros" />
+                        <p:inputText id="otros" value="#{emoController.selected.otros}" title="#{bundle.EditEmoTitle_otros}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_revisionSistemas}" for="revisionSistemas" />
+                        <p:selectBooleanCheckbox id="revisionSistemas" value="#{emoController.selected.revisionSistemas}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_descSiste}" for="descSiste" />
+                        <p:inputText id="descSiste" value="#{emoController.selected.descSiste}" title="#{bundle.EditEmoTitle_descSiste}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_apariencia}" for="apariencia" />
+                        <p:inputText id="apariencia" value="#{emoController.selected.apariencia}" title="#{bundle.EditEmoTitle_apariencia}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_dominancia}" for="dominancia" />
+                        <p:inputText id="dominancia" value="#{emoController.selected.dominancia}" title="#{bundle.EditEmoTitle_dominancia}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_peso}" for="peso" />
+                        <p:inputText id="peso" value="#{emoController.selected.peso}" title="#{bundle.EditEmoTitle_peso}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_talla}" for="talla" />
+                        <p:inputText id="talla" value="#{emoController.selected.talla}" title="#{bundle.EditEmoTitle_talla}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_imc}" for="imc" />
+                        <p:inputText id="imc" value="#{emoController.selected.imc}" title="#{bundle.EditEmoTitle_imc}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_tas}" for="tas" />
+                        <p:inputText id="tas" value="#{emoController.selected.tas}" title="#{bundle.EditEmoTitle_tas}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_presSist}" for="presSist" />
+                        <p:inputText id="presSist" value="#{emoController.selected.presSist}" title="#{bundle.EditEmoTitle_presSist}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_tad}" for="tad" />
+                        <p:inputText id="tad" value="#{emoController.selected.tad}" title="#{bundle.EditEmoTitle_tad}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_fc}" for="fc" />
+                        <p:inputText id="fc" value="#{emoController.selected.fc}" title="#{bundle.EditEmoTitle_fc}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_fr}" for="fr" />
+                        <p:inputText id="fr" value="#{emoController.selected.fr}" title="#{bundle.EditEmoTitle_fr}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_it}" for="it" />
+                        <p:inputText id="it" value="#{emoController.selected.it}" title="#{bundle.EditEmoTitle_it}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_abdomen}" for="abdomen" />
+                        <p:inputText id="abdomen" value="#{emoController.selected.abdomen}" title="#{bundle.EditEmoTitle_abdomen}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_hernias}" for="hernias" />
+                        <p:selectBooleanCheckbox id="hernias" value="#{emoController.selected.hernias}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_arcoMovilidadArt}" for="arcoMovilidadArt" />
+                        <p:inputText id="arcoMovilidadArt" value="#{emoController.selected.arcoMovilidadArt}" title="#{bundle.EditEmoTitle_arcoMovilidadArt}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_boca}" for="boca" />
+                        <p:inputText id="boca" value="#{emoController.selected.boca}" title="#{bundle.EditEmoTitle_boca}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_cicaTatu}" for="cicaTatu" />
+                        <p:selectBooleanCheckbox id="cicaTatu" value="#{emoController.selected.cicaTatu}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_columCerv}" for="columCerv" />
+                        <p:inputText id="columCerv" value="#{emoController.selected.columCerv}" title="#{bundle.EditEmoTitle_columCerv}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_columLumbo}" for="columLumbo" />
+                        <p:inputText id="columLumbo" value="#{emoController.selected.columLumbo}" title="#{bundle.EditEmoTitle_columLumbo}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_columTora}" for="columTora" />
+                        <p:inputText id="columTora" value="#{emoController.selected.columTora}" title="#{bundle.EditEmoTitle_columTora}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_columVertebral}" for="columVertebral" />
+                        <p:inputText id="columVertebral" value="#{emoController.selected.columVertebral}" title="#{bundle.EditEmoTitle_columVertebral}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_corazon}" for="corazon" />
+                        <p:inputText id="corazon" value="#{emoController.selected.corazon}" title="#{bundle.EditEmoTitle_corazon}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_cuelloDos}" for="cuelloDos" />
+                        <p:inputText id="cuelloDos" value="#{emoController.selected.cuelloDos}" title="#{bundle.EditEmoTitle_cuelloDos}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_filkenstein}" for="filkenstein" />
+                        <p:inputText id="filkenstein" value="#{emoController.selected.filkenstein}" title="#{bundle.EditEmoTitle_filkenstein}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_genitales}" for="genitales" />
+                        <p:inputText id="genitales" value="#{emoController.selected.genitales}" title="#{bundle.EditEmoTitle_genitales}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_lasegue}" for="lasegue" />
+                        <p:inputText id="lasegue" value="#{emoController.selected.lasegue}" title="#{bundle.EditEmoTitle_lasegue}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_limitacionFuncional}" for="limitacionFuncional" />
+                        <p:inputText id="limitacionFuncional" value="#{emoController.selected.limitacionFuncional}" title="#{bundle.EditEmoTitle_limitacionFuncional}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_marchaPuntas}" for="marchaPuntas" />
+                        <p:inputText id="marchaPuntas" value="#{emoController.selected.marchaPuntas}" title="#{bundle.EditEmoTitle_marchaPuntas}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_marchaTalones}" for="marchaTalones" />
+                        <p:inputText id="marchaTalones" value="#{emoController.selected.marchaTalones}" title="#{bundle.EditEmoTitle_marchaTalones}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_miembrosInf}" for="miembrosInf" />
+                        <p:inputText id="miembrosInf" value="#{emoController.selected.miembrosInf}" title="#{bundle.EditEmoTitle_miembrosInf}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_miembrosSup}" for="miembrosSup" />
+                        <p:inputText id="miembrosSup" value="#{emoController.selected.miembrosSup}" title="#{bundle.EditEmoTitle_miembrosSup}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_oidos}" for="oidos" />
+                        <p:inputText id="oidos" value="#{emoController.selected.oidos}" title="#{bundle.EditEmoTitle_oidos}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_ojos}" for="ojos" />
+                        <p:inputText id="ojos" value="#{emoController.selected.ojos}" title="#{bundle.EditEmoTitle_ojos}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_panel}" for="panel" />
+                        <p:inputText id="panel" value="#{emoController.selected.panel}" title="#{bundle.EditEmoTitle_panel}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_piel}" for="piel" />
+                        <p:inputText id="piel" value="#{emoController.selected.piel}" title="#{bundle.EditEmoTitle_piel}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_pulmones}" for="pulmones" />
+                        <p:inputText id="pulmones" value="#{emoController.selected.pulmones}" title="#{bundle.EditEmoTitle_pulmones}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_rodillasDos}" for="rodillasDos" />
+                        <p:inputText id="rodillasDos" value="#{emoController.selected.rodillasDos}" title="#{bundle.EditEmoTitle_rodillasDos}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_silla}" for="silla" />
+                        <p:inputText id="silla" value="#{emoController.selected.silla}" title="#{bundle.EditEmoTitle_silla}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_tinel}" for="tinel" />
+                        <p:inputText id="tinel" value="#{emoController.selected.tinel}" title="#{bundle.EditEmoTitle_tinel}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_trabajoAlturas}" for="trabajoAlturas" />
+                        <p:inputText id="trabajoAlturas" value="#{emoController.selected.trabajoAlturas}" title="#{bundle.EditEmoTitle_trabajoAlturas}" />
+                        <p:outputLabel value="#{bundle.EditEmoLabel_pruebasVestibular}" for="pruebasVestibular" />
+                        <p:selectBooleanCheckbox id="pruebasVestibular" value="#{emoController.selected.pruebasVestibular}" />
+                        </p:panelGrid>
+                    <p:commandButton actionListener="#{emoController.update}" value="#{bundle.Save}" update="display,:EmoListForm:datalist,:growl" oncomplete="handleSubmit(args, 'EmoEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="EmoEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
